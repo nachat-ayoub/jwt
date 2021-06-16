@@ -1,0 +1,86 @@
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="undefined" crossorigin="anonymous">
+
+<style type="text/css">
+  input {
+    width: 35rem !important;
+    height: 3rem !important;
+  }
+
+</style>
+
+
+  <title> Sing-in </title>
+</head>
+
+<body>
+
+
+
+<main class="container d-flex justify-content-center mt-5 ">
+
+  <form class="form" action="/sing-up" method="POST" >
+
+    
+<!--
+
+    <div class="mb-3">
+      <label for="username"  class="form-label">Username*</label>
+      <input required type="text" name="username"  class="form-control" id="username">
+    </div>
+
+-->
+
+    <div class="mb-3">
+      <label for="email"class="form-label">Email*</label>
+      <input required type="email" name="email"  class="form-control" id="email">
+    </div>
+
+    <div class="mb-3">
+      <label for="password" class="form-label">Password*</label>
+      <input required type="password" name="password" class=" password form-control" id="password">
+    </div>
+
+    <div class="mb-3">
+      <label for="password" class="form-label">confirm Password*</label>
+      <input required type="password" name="confirmPassword" class="confirmPassword form-control" id="confirmPassword">
+    </div>
+ 
+    <div class=" errmsg text-center">
+
+    </div>
+
+    <div class="d-flex justify-content-center mt-5">
+      <button type="submit" onclick="" class="btn submit btn-primary px-3">Submit</button>
+    </div>
+
+  </form>
+
+</main>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.min.js" integrity="sha512-EKWWs1ZcA2ZY9lbLISPz8aGR2+L7JVYqBAYTq5AXgBkSjRSuQEGqWx8R1zAX16KdXPaCjOCaKE8MCpU0wcHlHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    const btn = document.querySelector(".submit")
+    const errmsg = document.querySelector(".errmsg")
+    const form = document.querySelector(".form")
+
+    btn.addEventListener("click", (e) => {
+        // e.preventDefault()
+
+          console.log(form.password.value+" , "+ form.confirmPassword.value)
+
+        if(form.password.value !== form.confirmPassword.value ) {
+          errmsg.innnerHTML = `
+            <div class=" alert alert-danger text-center mb-3">
+              <p>password or email incorrect</p>
+            </div>
+          `
+        }    
+    })
+  </script>
+</body>
+
+</html>
