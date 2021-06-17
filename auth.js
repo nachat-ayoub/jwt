@@ -26,7 +26,6 @@ module.exports.signup_post = async (req, res) => {
   	const user = await User.create({email, password})
     const token = createToken(user._id);
     res.cookie('userJWT', token, { httpOnly: true, maxAge: maxAge * 1000 });
-    res.cookie('userID', user._id, { httpOnly: true, maxAge: maxAge * 1000 });
     res.redirect('/user')
   } 
   catch (err) {
@@ -41,7 +40,6 @@ module.exports.login_post = async (req, res) => {
   	const user = await User.login(email, password)
   	const token = createToken(user._id)
   	res.cookie("userJWT", token, { httpOnly: true, maxAge: maxAge * 1000 })
-    res.cookie('userID', user._id, { httpOnly: true, maxAge: maxAge * 1000 });
   	res.redirect('/user')
   } 
   catch (err) {

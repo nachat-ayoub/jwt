@@ -1,15 +1,6 @@
 <html>
 <head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="undefined" crossorigin="anonymous">
-
-<style type="text/css">
-  input {
-    width: 35rem !important;
-    height: 3rem !important;
-  }
-
-</style>
-
+  <%- include('head') %>
 
   <title> Sing-in </title>
 </head>
@@ -18,10 +9,21 @@
 
 
 
-<main class="container d-flex justify-content-center mt-5 ">
+<main class="main d-flex justify-content-center align-items-center">
+
+  <div class="side-login ">
+    <h1>LOGO</h1>
+    <br>
+    <h4>This is a simple text.</h4>
+  </div>
 
   <form class="form" action="/sing-up" method="POST" >
+<div class="formTitle">
+  <h1 class="signUser">
+    Sign Up <i class="fas fa-user-plus"></i>
+  </h1>
 
+</div>
     
 <!--
 
@@ -33,17 +35,17 @@
 -->
 
     <div class="mb-3">
-      <label for="email"class="form-label">Email*</label>
+      <label for="email"class="form-label">Email<span>*</span></label>
       <input required type="email" name="email"  class="form-control" id="email">
     </div>
 
     <div class="mb-3">
-      <label for="password" class="form-label">Password*</label>
+      <label for="password" class="form-label">Password<span>*</span></label>
       <input required type="password" name="password" class=" password form-control" id="password">
     </div>
 
     <div class="mb-3">
-      <label for="password" class="form-label">confirm Password*</label>
+      <label for="password" class="form-label">confirm Password<span>*</span></label>
       <input required type="password" name="confirmPassword" class="confirmPassword form-control" id="confirmPassword">
     </div>
  
@@ -51,9 +53,17 @@
 
     </div>
 
-    <div class="d-flex justify-content-center mt-5">
-      <button type="submit" onclick="" class="btn submit btn-primary px-3">Submit</button>
+    <div class="d-flex justify-content-center align-items-center mt-4">
+      <button type="submit" class="btn-grad px-3">
+        Submit
+      </button>
+      <div class="backHome">
+        <span>Or </span> 
+        <a href="/"> Back.</a>
+      </div>
     </div>
+
+
 
   </form>
 

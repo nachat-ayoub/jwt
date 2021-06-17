@@ -1,36 +1,45 @@
 <html>
 <head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="undefined" crossorigin="anonymous">
-
-  <style type="text/css">
-    input {
-      width: 35rem !important;
-      height: 3rem !important;
-    }
-  </style>
-
+    
   <title> Login </title>
+
+    <%- include('head') %>
+
 </head>
 
 <body>
+<!-- <%- include('nav') %> -->
+<main class="main d-flex justify-content-center align-items-center">
 
-<main class="container d-flex justify-content-center mt-5 ">
+  <div class="side-login ">
+    <h1>LOGO</h1>
+    <br>
+    <h4>This is a simple text.</h4>
+  </div>
 
   <form class="form" action="/login" method="POST" >
-
+      <div class="formTitle">
+        <h1> Login <i class="far fa-user"></i> </h1>
+      </div>
 
     <div class="mb-3">
-      <label for="email" class="form-label">Email*</label>
+      <label for="email" class="form-label">Email<span>*</span></label>
       <input required type="email" name="email" class="form-control" id="email">
     </div>
 
     <div class="mb-3">
-      <label for="password"  class="form-label">Password*</label>
+      <label for="password"  class="form-label">Password<span>*</span></label>
       <input required type="password" name="password" class="form-control" id="password">
     </div>
 
-    <div class="d-flex justify-content-center mt-5">
-      <button type="submit" class="btn btn-primary px-3">Submit</button>
+    <div class="d-flex justify-content-center align-items-center mt-4">
+      <button type="submit" class="btn-grad  px-3">
+        Submit
+      </button>
+      <div class="backHome">
+        <span>Or </span> 
+        <a href="/sign-up"> Sign-up.</a>
+      </div>
     </div>
 
 
@@ -39,7 +48,7 @@
 </main>
 
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.min.js" integrity="sha512-EKWWs1ZcA2ZY9lbLISPz8aGR2+L7JVYqBAYTq5AXgBkSjRSuQEGqWx8R1zAX16KdXPaCjOCaKE8MCpU0wcHlHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-</body>
+<!--   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.min.js" integrity="sha512-EKWWs1ZcA2ZY9lbLISPz8aGR2+L7JVYqBAYTq5AXgBkSjRSuQEGqWx8R1zAX16KdXPaCjOCaKE8MCpU0wcHlHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+  </body>
 
 </html>

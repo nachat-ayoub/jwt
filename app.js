@@ -7,7 +7,7 @@ require('dotenv').config()
 const User = require("./models/User");
 const cookieParser = require('cookie-parser');
 const auth = require('./auth.js');
-const { requireAuth } = require('./authMiddleware');
+const { requireAuth, checkUser } = require('./authMiddleware');
 
 
 const app = express()
@@ -19,6 +19,7 @@ app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(cookieParser());
+
 
 // Salt
 const salt = 12;
@@ -35,22 +36,20 @@ mongoose.connect(process.env.URI_DB, {
 
 
 // GET
+app.get('*', checkUser);
 app.get('/', (req,res) => res.render('index') )
 app.get('/login', (req,res) => res.render('login') )
-app.get('/sing-up', (req,res) => res.render('sing-up') )
-app.get('/user', requireAuth, (req,res) => {
-	const tokenID = req.cookies.userID;
-	if (!tokenID) {res.redirect('/')}
-	const user = User.findById(tokenID)
-		.then(data => res.render('user', {data: data}))
-		.catch (err => console.log(err) )
-	
+app.get('/sign-up', (req,res) => res.render('sign-up') )
+app.get('/user', requireAuth, (req,res) => res.render('user') )
+app.get('/logout', (req,res) => {
+	res.cookie("userJWT", '', { httpOnly: true, maxAge: 1})
+	res.redirect('/')
 })
 
 
 // POST 
 app.post('/login', auth.login_post)
-app.post('/sing-up', auth.signup_post)
+app.post('/sign-up', auth.signup_post)
 
 
 

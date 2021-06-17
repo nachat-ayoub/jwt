@@ -1,0 +1,172 @@
+body.not(i) {
+	font-family: 'Poppins', sans-serif;
+	background-color: #fff !important;
+}
+
+span {
+	color: #DC2424 !important;
+}
+
+.main {
+	background-image: linear-gradient(to right bottom, #4a47a3, #8f469d, #bd4a8d, #dc5a7b, #ed7469);
+	height: 100vh;
+	position: relative;
+}
+.side-login {
+	position: absolute;
+	width: 50%;
+	left: 6rem;
+}
+.side-login h1 {
+	font-size: 5rem;
+	color: #fff;
+}
+.side-login h4 {
+	font-size: 2.5rem;
+	color: #fff;
+}
+.form {
+  width: 50% !important;
+  height: 100vh !important;
+  background-color: #fff !important;
+  color: #4A47A3 !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-direction: column !important;
+  padding: 2rem !important;
+  border-top-left-radius: 1.3rem;
+  border-bottom-left-radius: 1.3rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  -webkit-box-shadow: -3px 0px 15px -1px rgba(0,0,0,0.3); 
+  box-shadow: -3px 0px 15px -1px rgba(0,0,0,0.3);
+}
+.form .formTitle h1 {
+	font-size: 3rem !important;
+	margin-bottom: 4rem;
+}
+input {
+  width: 23rem !important;
+  height: 3rem !important;
+  border: 2px solid #4A47A3 !important;
+}
+
+
+.btn-grad {
+  background-image: linear-gradient(to right, #4A569D 0%, #DC2424  51%, #4A569D  100%)
+}
+.btn-grad {
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  width: 9rem !important;
+  color: white;            
+  box-shadow: 0 0 20px #eee;
+  border: none;
+  border-radius: 10px;
+  display: block;	
+  font-size: 1.2rem !important;
+  font-weight: bold !important;
+}
+
+.btn-grad:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
+       
+.backHome {
+  font-size: 1.2rem;
+}
+
+label {
+	font-size: 1.2rem;
+	font-weight: bold;
+	color: #4A47A3;
+}
+.btn-primary {
+	width: 9rem !important;
+	height: 3.5rem !important;
+	color: #fff !important;
+	font-size: 1.3rem;
+	background-color: #ED7469 !important;
+	border: none !important;
+	border-radius: .9rem !important;
+}
+
+.btn-primary:hover {
+	transition: 0.3s !important;
+	color: #fff;
+	background-color: #ED7469 !important;
+}
+nav {
+	background-color: #4A47A3 !important;
+	height: 4.4rem !important;
+	color: #fff !important;
+	padding: 0rem 2rem !important;
+	display: flex !important;
+	justify-content: space-between !important;
+	align-items: center !important;
+}
+
+nav .logo a {
+	font-size: 2rem !important;
+}
+
+nav ul {
+	display: flex !important;
+	align-items: center !important;
+	justify-content: space-between !important;
+}
+.navLinks {
+	display: flex !important;
+	align-items: center !important;
+	justify-content: space-between !important;
+}
+nav li {
+	list-style: none !important;
+	margin-right: 1.5rem !important;
+	margin-top: 0.9rem !important;
+}
+nav a {
+	font-size: 1.2rem !important;
+	text-decoration: none !important;
+	color: #fff !important;
+}
+
+nav li a:hover {
+	letter-spacing: 2px;
+	color: #DC2424 !important;
+	transition: .3s all ease;
+} 
+
+.backHome {
+	font-size: 1.3rem;
+}
+.backHome a {
+	text-decoration: none;
+	color: #4A47A3;
+}
+.backHome span, .backHome a {
+	font-weight: bold;
+}
+
+.backHome a:hover {
+	font-size: 1.3rem;
+	text-decoration: none;
+	color: #7267e6;
+}
+.textHeader {
+	font-size: 5rem;
+	margin-bottom: 2rem;
+}
+.smiler {
+	font-size: 14rem !important;
+	color: #DC2424;
+}
