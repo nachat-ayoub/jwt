@@ -159,5 +159,5 @@ app.put("/posts/edit/:id", requireAuth, authPage, upload.single("image"), async 
 
 
 
-PORT = process.env.PORT || 5000
-app.listen( PORT , () => console.log(`Server running on port ${PORT}`))
+port = process.env.PORT || 5000
+app.listen( port , () => console.log(`Server running on port ${port}`))
