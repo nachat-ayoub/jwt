@@ -40,7 +40,7 @@ UserSchema.pre('save', async function(next) {
 
 
 
-
+/*
 UserSchema.statics.login = async function(email, password) {
   const user = await this.findOne({ email });
   let msg = "The password or the email aren't correct"
@@ -59,14 +59,9 @@ UserSchema.statics.login = async function(email, password) {
   }
 }
 
+*/
 
 
 
-
-
-
-
-
-
-const User = mongoose.model('User', UserSchema);
-module.exports = User;
+const User = mongoose.model('User', UserSchema)
+module.exports = User

@@ -34,38 +34,6 @@ const PostSchema = new mongoose.Schema({
 
 
 
-/*
-UserSchema.pre('save', async function(next) {
-  const salt = await bcrypt.genSalt();
-  this.password = await bcrypt.hash(this.password, salt);
-  next();
-});
 
-
-
-
-UserSchema.statics.login = async function(email, password) {
-  const user = await this.findOne({ email });
-
-  if (user) {
-      const isAuth = await bcrypt.compare(password, user.password)
-      if (isAuth) {
-        return user;
-      }
-      else {
-        throw error;
-      }
-  } 
-  else {
-    throw error;
-  }
-}
-
-*/
-
-
-
-
-
-const Post = mongoose.model('Post', PostSchema);
-module.exports = Post;
+const Post = mongoose.model('Post', PostSchema)
+module.exports = Post
