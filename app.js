@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const mongoose = require('mongoose');
 require('dotenv').config()
-const User = require(path.join(__dirname,"./models/User"));
+const User = require("./models/User");
 const Post = require("./models/Post");
 const cookieParser = require('cookie-parser');
 const authController = require('./authController.js');
@@ -25,7 +25,7 @@ const app = express()
 
 
 app.set('view engine', 'ejs')
-app.use(express.static('public'))
+app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 app.use(cookieParser());
