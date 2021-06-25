@@ -31,6 +31,9 @@
       <label for="password"  class="form-label">Password<span>*</span></label>
       <input required type="password" name="password" class="form-control" id="password">
     </div>
+    <% if(typeof msg_err !== "undefined") { %>
+      <div class="alert alert-danger mt-1"><%= msg_err %></div>
+    <% } %>
 
     <div class="d-flex justify-content-center align-items-center mt-4">
       <button type="submit" class="btn-grad  px-3">

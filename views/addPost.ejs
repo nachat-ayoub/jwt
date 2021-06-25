@@ -1,0 +1,67 @@
+<html>
+<head>
+    
+  <title> Create Post </title>
+
+    <%- include('head') %>
+
+</head>
+
+<body>
+    <% if(user !== null ) { %>
+      <% if(user.role == 'admin' ) { %>
+             <%- include('navAdmin') -%>
+      <% } else { %>
+           <%- include('navLogout') -%>
+      <% } %>
+    <% } else { %>
+      <%- include('nav') -%>
+    <% } %>
+<main class="container d-flex justify-content-center align-items-center">
+
+  <form class="add-form" action="/posts/create" method="POST" enctype="multipart/form-data" >
+
+    <div class="text-center">
+      <h1>ADD POST</h1>
+    </div>
+
+    <div class="">
+      <div class="row">
+        <div class="mb-3 col">
+          <label for="title" class="form-label">Title<span>*</span></label>
+          <input required type="text" name="title" class="form-control" id="title">
+        </div>
+        <div class="mb-3 col">
+          <label for="image"  class="form-label">Image<span>*</span></label>
+          <input type="file" name="image" class="form-control" id="image">
+        </div>
+      </div>
+
+      <div class="mb-3 ">
+        <label for="body"  class="form-label">Body<span>*</span></label>
+        <textarea required id="body" name="body" class=" form-control textarea w-100" rows="5"></textarea> 
+      </div>
+    </div>
+
+
+
+    <div class="d-flex justify-content-center align-items-center mt-4">
+      <button type="submit" class="btn-lg btn-grad px-4 py-2 mr-3">
+        Save
+      </button>
+      <div class="backHome">
+        <span class="mr-2">Or </span> 
+        <a href="/user"> Cancel.</a>
+      </div>
+    </div>
+
+
+  </form>
+
+</main>
+
+
+<!--   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.min.js" integrity="sha512-EKWWs1ZcA2ZY9lbLISPz8aGR2+L7JVYqBAYTq5AXgBkSjRSuQEGqWx8R1zAX16KdXPaCjOCaKE8MCpU0wcHlHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+  </body>
+
+</html>

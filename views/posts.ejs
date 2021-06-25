@@ -1,0 +1,184 @@
+<html>
+<head>
+
+  <%- include('head') -%>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+  
+  <title> dashboard </title>
+
+
+    <style>
+      html,
+      body {
+        position: relative;
+      }
+
+      .swiper-container {
+        width: 60%;
+        height: 60%;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+      .swiper-button-next, .swiper-button-prev {
+      	font-weight:bold;
+      }
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
+
+
+
+
+</head>
+
+<body>
+
+    <% if(user !== null ) { %>
+      <% if(user.role == 'admin' ) { %>
+             <%- include('navAdmin') -%>
+      <% } else { %>
+           <%- include('navLogout') -%>
+      <% } %>
+    <% } else { %>
+      <%- include('nav') -%>
+    <% } %>
+
+
+<!-- <Swiper> -->
+
+	<% if(Posts.length <= 0 ) { %>
+
+  	<% } else { %>
+	    <div class="swiper-container my-3 mySwiper">
+	      <div class="swiper-wrapper">
+	      	<% Posts.forEach(post => { %>
+	        	<a href="/posts/<%= post._id %>" class="swiper-slide">
+	        		<img src="<%= post.image %>">
+	        	</a>
+    	 	<% }) %>
+
+	      </div>
+	      <div class="swiper-button-next"></div>
+	      <div class="swiper-button-prev"></div>
+	      <div class="swiper-pagination"></div>
+	    </div>
+  	<% } %>
+<!-- <Swiper /> -->
+
+
+
+
+
+
+
+
+
+
+<main class="container text-center mt-5 ml-5 mr-5">
+		
+	<% if(user !== null ) { %>
+  	  <h1><i class="far fa-user-circle"></i> Welcom  <%= user.username %>, you can read our posts </h1>
+  	<% } else { %>
+	  <h1><i class="far fa-user-circle"></i> Welcom there, you can read our posts </h1>
+  	<% } %>
+
+	<section class="posts-section container mt-5">
+		<div class="last-posts container">
+
+			<div class="firstLine mt-2 mb-4 d-flex justify-content-center align-items-center">
+				<button class="btn posts-btn btn-primary ">Last updates</button>
+				<div class="line mr-2 ml-2"></div>
+				<button class="btn posts-btn btn-primary ">See more</button>
+			</div>
+
+			<div class="posts ">
+				<% Posts.forEach(post => { %>
+					<div class="text-left my-4 post row">
+						<div class="thumb col"> <img src="<%= post.image %>"> </div>
+						<div class="content col">
+							<div class="post-title font-weight-bold">
+                <%- post.title %>
+							</div>
+							<div class="post-body font-weight-light">
+                  <%- post.body.slice(0, 145)+"..." -%>
+							</div>
+							<a class="btn btn-info mt-2" href="/posts/<%= post._id %>">read more</a>
+						</div>
+					</div>
+			  	<% }) %>
+		  	</div>
+
+		</div>
+		<div class="tags"></div>
+	</section>
+</main>
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.min.js" integrity="sha512-EKWWs1ZcA2ZY9lbLISPz8aGR2+L7JVYqBAYTq5AXgBkSjRSuQEGqWx8R1zAX16KdXPaCjOCaKE8MCpU0wcHlHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+	<script type="text/javascript">
+		var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+
+
+
+  let deleteBtn = document.querySelector('.btn-danger')
+  let editBtn = document.querySelector('.editBtn')
+  let myid = deleteBtn.dataset.myid
+  let link = 'http://localhost:5000/delete/'+myid
+  console.log(link)
+
+  deleteBtn.addEventListener('click', function(){
+    fetch(link, {
+      method: 'DELETE', 
+      headers: {
+      'Content-type': 'application/json; charset=UTF-8'
+    }
+      
+    }).then(res => console.log('deleted post id : '+ myid))
+      .catch(err => console.log(err))
+  })
+
+
+	</script>
+
+</body>
+
+</html>

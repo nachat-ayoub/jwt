@@ -17,43 +17,57 @@
     <h4>This is a simple text.</h4>
   </div>
 
-  <form class="form" action="/sing-up" method="POST" >
-<div class="formTitle">
-  <h1 class="signUser">
-    Sign Up <i class="fas fa-user-plus"></i>
-  </h1>
+  <form class="form" action="/sign-up" method="POST" >
 
-</div>
-    
-<!--
 
-    <div class="mb-3">
-      <label for="username"  class="form-label">Username*</label>
-      <input required type="text" name="username"  class="form-control" id="username">
+
+    <div class="formTitle">
+      <h1 class="signUser mt-2">
+        Sign Up <i class="fas fa-user-plus"></i>
+      </h1>
     </div>
 
--->
+    <div class="form-group mb-2">
+      <label for="username"  class="form-label">Username<span>*</span></label>
+      <% if(typeof username !== "undefined") { %>
+        <input required value="<%= username %>" type="text" name="username"  class="form-control" id="username">
+      <% }else { %>
+        <input required type="text" name="username"  class="form-control" id="username">
+      <% } %>
+      <% if(typeof msg_username !== "undefined") { %>
+        <div class="alert alert-danger mt-1"><%= msg_username %></div>
+      <% } %>
+    </div>
 
-    <div class="mb-3">
+    <div class="form-group mb-2">
       <label for="email"class="form-label">Email<span>*</span></label>
-      <input required type="email" name="email"  class="form-control" id="email">
+      <% if(typeof email !== "undefined") { %>
+        <input required value="<%= email %>" type="email" name="email"  class="form-control" id="email">
+      <% }else { %>
+        <input required type="email" name="email"  class="form-control" id="email">
+      <% } %>
+      <% if(typeof msg_email !== "undefined") { %>
+        <div class="alert alert-danger mt-1"><%= msg_email %></div>
+      <% } %>
     </div>
 
-    <div class="mb-3">
+    <div class="form-group mb-2">
       <label for="password" class="form-label">Password<span>*</span></label>
       <input required type="password" name="password" class=" password form-control" id="password">
+      <% if(typeof msg_password !== "undefined") { %>
+        <div class="alert alert-danger mt-1"><%= msg_password %></div>
+      <% } %>
     </div>
 
-    <div class="mb-3">
+    <div class="form-group mb-2">
       <label for="password" class="form-label">confirm Password<span>*</span></label>
       <input required type="password" name="confirmPassword" class="confirmPassword form-control" id="confirmPassword">
+      <% if(typeof msg_password !== "undefined" ) { %>
+        <div class="alert alert-danger mt-1"><%= msg_password %></div>
+      <% } %>
     </div>
- 
-    <div class=" errmsg text-center">
 
-    </div>
-
-    <div class="d-flex justify-content-center align-items-center mt-4">
+    <div class="form-group d-flex justify-content-center align-items-center mt-2">
       <button type="submit" class="btn-grad px-3">
         Submit
       </button>
@@ -62,9 +76,6 @@
         <a href="/"> Back.</a>
       </div>
     </div>
-
-
-
   </form>
 
 </main>
@@ -73,23 +84,9 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.min.js" integrity="sha512-EKWWs1ZcA2ZY9lbLISPz8aGR2+L7JVYqBAYTq5AXgBkSjRSuQEGqWx8R1zAX16KdXPaCjOCaKE8MCpU0wcHlHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
-    const btn = document.querySelector(".submit")
-    const errmsg = document.querySelector(".errmsg")
     const form = document.querySelector(".form")
+    const errmsg = document.querySelector(".errmsg")
 
-    btn.addEventListener("click", (e) => {
-        // e.preventDefault()
-
-          console.log(form.password.value+" , "+ form.confirmPassword.value)
-
-        if(form.password.value !== form.confirmPassword.value ) {
-          errmsg.innnerHTML = `
-            <div class=" alert alert-danger text-center mb-3">
-              <p>password or email incorrect</p>
-            </div>
-          `
-        }    
-    })
   </script>
 </body>
 

@@ -9,14 +9,19 @@
 <body>
 
 	<% if(user !== null ) { %>
-  		<%- include('navLogout') -%>
+		<% if(user.role == 'admin' ) { %>
+  			   <%- include('navAdmin') -%>
+		<% } else { %>
+			   <%- include('navLogout') -%>
+		<% } %>
+
   	<% } else { %>
 		<%- include('nav') -%>
   	<% } %>
 
 <main class="container text-center mt-5 ml-5 mr-5">
 
-	<h1>Welcom User  <br /> <i class="far fa-user-circle"></i> <%= user.email %> </h1>
+	<h1>Welcom <%= user.role %> <span><%= user.username %></span>   <br /> <i class="far fa-user-circle"></i> <%= user.email %> </h1>
 	<h1 class="smiler  mt-5">
 		<i class="far fa-smile-wink"></i>
 	</h1>

@@ -8,8 +8,16 @@
 
 <body>
 
-<%- include('nav') %>
-
+    <% if(user !== null ) { %>
+      <% if(user.role == 'admin' ) { %>
+             <%- include('navAdmin') -%>
+      <% } else { %>
+           <%- include('navLogout') -%>
+      <% } %>
+    <% } else { %>
+      <%- include('nav') -%>
+    <% } %>
+    
 <main class="container text-center mt-5 ml-5 mr-5">
 
       <h1 class="textHeader">Home Page</h1>
@@ -17,8 +25,10 @@
       <div class="text">
         <h1><span> Go to </span><a class="btn-link" href="/user"> Dashboard </a>  
       </div>
-  
-
+      <div class="thumb">
+        <img class="mt-5 mb-5 img " src="https://images.unsplash.com/photo-1586769852388-153870393504">
+      </div>
+      
 </main>
 
 

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('head') -%>
+  <title>Edit Post</title>
+</head>
+<body>
+
+    <% if(user !== null ) { %>
+      <% if(user.role == 'admin' ) { %>
+             <%- include('navAdmin') -%>
+      <% } else { %>
+           <%- include('navLogout') -%>
+      <% } %>
+    <% } else { %>
+      <%- include('nav') -%>
+    <% } %>
+
+
+<div class="container">
+<h2 class="mt-3 mb-5 text-center">TOP posts in this week</h2>
+
+
+<div class="mt-2 mb-4 d-flex justify-content-center align-items-center">
+
+  <div class=" my-3 post ">
+    <div class="full-thumb row ">
+      <img src="<%= post.image %>">
+    </div>
+
+    <div class="content mt-4 text-left">
+      <div class="post-title mb-4  font-weight-bold">
+        <%= post.title %>
+      </div>
+      <div class="post-body font-weight-light">
+        <%= post.body %>
+      </div>
+      <% if(user !== null ) { %>
+        <% if(user.role == 'admin' ) { %>
+          <div class="d-flex justify-content-center align-items-center m-5">
+            <div class="mx-4">
+              <a href="/posts/edit/<%= post._id %>" class="btn btn-info editBtn mt-2">
+                Edit
+              </a>
+            </div>
+            <form class="mx-4" method="POST" action="/posts/delete/<%= post._id %>">
+              <input type="hidden" name="_method" value="DELETE"> 
+              <button class="btn btn-danger deleteBtn mt-2">Delete</button>
+            </form>
+          </div>
+        <% } %>
+      <% } %>
+          
+      
+    </div>
+  </div>
+
+
+<!-- <div class="p-0 text-left my-5 mx-2" >
+  <img src="<%= post.image %>" class="img">
+  <div class="body float-right">
+    <h3 class=" mb-4"><%= post.title %></h3>
+    <p class="">body : <%= post.body %> </p>
+
+    <form method="POST" action="/post/<%= post._id %>" >
+      <a href="/post/edit/<%= post._id %>" class="btn edit-btn btn-info">
+        Edit <i class="far fa-edit"></i>
+      </a>
+      <input type="hidden" name="_method" value="DELETE">
+      <button type="submit" class="btn delete-btn btn-danger">
+          Delete <i class="far fa-trash-alt"></i>
+      </button>
+    </form>
+  </div>
+</div> -->
+
+</div>
+
+
+
+
+</div>
+
+
+<%- include('footer') -%>
+</body>
+</html>
