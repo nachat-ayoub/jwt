@@ -39,7 +39,7 @@ UserSchema.pre('save', async function(next) {
 });
 
 
-
+/*
 
 UserSchema.statics.login = async function(email, password) {
   const user = await this.findOne({ email });
@@ -59,7 +59,7 @@ UserSchema.statics.login = async function(email, password) {
   }
 }
 
-
+*/
 
 
 
