@@ -121,7 +121,6 @@ app.put("/posts/edit/:id", requireAuth, authPage, upload.single("image"), async 
     console.log(req.file)
     if (req.file) {
       await cloudinary.uploader.destroy(post.cloudinary_id)
-      console.log("we are in req.file")
       let result = await cloudinary.uploader.upload(req.file.path)
       const data = {
 	    title: req.body.title,
@@ -131,7 +130,6 @@ app.put("/posts/edit/:id", requireAuth, authPage, upload.single("image"), async 
 	  }
 	  post = await Post.findByIdAndUpdate(req.params.id, data)
     } else {
-       console.log("we are not in req.file")
 	   const data = {
 	     title: req.body.title,
 	     body: req.body.body,
@@ -160,4 +158,4 @@ app.put("/posts/edit/:id", requireAuth, authPage, upload.single("image"), async 
 
 
 port = process.env.PORT || 5000
-app.listen( process.env.PORT || 5000 , () => console.log(`Server running on port `))
+app.listen(port, () => console.log(`Server running on port ${port}`))
