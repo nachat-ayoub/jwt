@@ -4,8 +4,8 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const mongoose = require('mongoose');
 require('dotenv').config()
-const User = require("./models/user");
-const Post = require("./models/post");
+const User = require("./models/User");
+const Post = require("./models/Post");
 const cookieParser = require('cookie-parser');
 const authController = require('./authController.js');
 const { requireAuth, checkUser, authPage } = require('./authMiddleware');
