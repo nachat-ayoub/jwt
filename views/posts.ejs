@@ -120,7 +120,7 @@
                 <%- post.title %>
 							</div>
 							<div class="post-body font-weight-light">
-                  <%- post.body.slice(0, 145)+"..." -%>
+                  <%- post.body %>
 							</div>
 							<a class="btn btn-info mt-2" href="/posts/<%= post._id %>">read more</a>
 						</div>
@@ -159,22 +159,11 @@
 
 
 
-  let deleteBtn = document.querySelector('.btn-danger')
-  let editBtn = document.querySelector('.editBtn')
-  let myid = deleteBtn.dataset.myid
-  let link = 'http://localhost:5000/delete/'+myid
-  console.log(link)
-
-  deleteBtn.addEventListener('click', function(){
-    fetch(link, {
-      method: 'DELETE', 
-      headers: {
-      'Content-type': 'application/json; charset=UTF-8'
-    }
-      
-    }).then(res => console.log('deleted post id : '+ myid))
-      .catch(err => console.log(err))
-  })
+    let bodys = document.querySelectorAll('.post-body')
+    bodys.forEach(body => {
+      let content = body.innerText
+      body.innerHTML = content.slice(0, 145)+"..."
+    })
 
 
 	</script>

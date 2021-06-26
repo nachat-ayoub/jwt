@@ -16,6 +16,7 @@
   "dependencies": {
     "bcrypt": "^5.0.1",
     "body-parser": "^1.19.0",
+    "ckeditor4": "^4.16.1",
     "cloudinary": "^1.26.0",
     "cookie-parser": "^1.4.5",
     "dotenv": "^10.0.0",

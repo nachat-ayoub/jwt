@@ -33,7 +33,7 @@
         <%= post.title %>
       </div>
       <div class="post-body font-weight-light">
-        <%= post.body %>
+          <%- post.body %>
       </div>
       <% if(user !== null ) { %>
         <% if(user.role == 'admin' ) { %>
@@ -54,25 +54,6 @@
       
     </div>
   </div>
-
-
-<!-- <div class="p-0 text-left my-5 mx-2" >
-  <img src="<%= post.image %>" class="img">
-  <div class="body float-right">
-    <h3 class=" mb-4"><%= post.title %></h3>
-    <p class="">body : <%= post.body %> </p>
-
-    <form method="POST" action="/post/<%= post._id %>" >
-      <a href="/post/edit/<%= post._id %>" class="btn edit-btn btn-info">
-        Edit <i class="far fa-edit"></i>
-      </a>
-      <input type="hidden" name="_method" value="DELETE">
-      <button type="submit" class="btn delete-btn btn-danger">
-          Delete <i class="far fa-trash-alt"></i>
-      </button>
-    </form>
-  </div>
-</div> -->
 
 </div>
 

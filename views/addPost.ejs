@@ -5,6 +5,14 @@
 
     <%- include('head') %>
 
+        <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
+    <script>
+      tinymce.init({
+        selector: '#body'
+      });
+    </script>
+
 </head>
 
 <body>
@@ -43,6 +51,7 @@
       </div>
     </div>
 
+    <div id="bodyDiv"></div>
 
 
     <div class="d-flex justify-content-center align-items-center mt-4">
@@ -62,6 +71,18 @@
 
 
 <!--   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.min.js" integrity="sha512-EKWWs1ZcA2ZY9lbLISPz8aGR2+L7JVYqBAYTq5AXgBkSjRSuQEGqWx8R1zAX16KdXPaCjOCaKE8MCpU0wcHlHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-  </body>
+
+
+
+  <script src="https://cdn.ckeditor.com/4.16.1/full-all/ckeditor.js"></script>
+
+  <script>
+    CKEDITOR.replace('body');
+  </script>
+
+
+
+
+</body>
 
 </html>
