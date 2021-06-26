@@ -1,0 +1,158 @@
+2021-06-26T22:45:24.905604+00:00 app[web.1]: at Function.Module._load (internal/
+modules/cjs/loader.js:900:14)
+2021-06-26T22:45:24.905605+00:00 app[web.1]: at Function.executeUserEntryPoint [
+as runMain] (internal/modules/run_main.js:74:12)
+2021-06-26T22:45:24.905605+00:00 app[web.1]: at internal/main/run_main_module.js
+:18:47 {
+2021-06-26T22:45:24.905606+00:00 app[web.1]: code: 'MODULE_NOT_FOUND',
+2021-06-26T22:45:24.905606+00:00 app[web.1]: requireStack: [ '/app/app.js' ]
+2021-06-26T22:45:24.905606+00:00 app[web.1]: }
+2021-06-26T22:45:24.912844+00:00 app[web.1]: npm ERR! code ELIFECYCLE
+2021-06-26T22:45:24.913051+00:00 app[web.1]: npm ERR! errno 1
+2021-06-26T22:45:24.914300+00:00 app[web.1]: npm ERR! login-tut@1.0.0 start: `no
+de app.js`
+2021-06-26T22:45:24.914435+00:00 app[web.1]: npm ERR! Exit status 1
+2021-06-26T22:45:24.914559+00:00 app[web.1]: npm ERR!
+2021-06-26T22:45:24.914647+00:00 app[web.1]: npm ERR! Failed at the login-tut@1.
+0.0 start script.
+2021-06-26T22:45:24.914722+00:00 app[web.1]: npm ERR! This is probably not a pro
+blem with npm. There is likely additional logging output above.
+2021-06-26T22:45:24.923989+00:00 app[web.1]:
+2021-06-26T22:45:24.924191+00:00 app[web.1]: npm ERR! A complete log of this run
+ can be found in:
+2021-06-26T22:45:24.924320+00:00 app[web.1]: npm ERR!     /app/.npm/_logs/2021-0
+6-26T22_45_24_917Z-debug.log
+2021-06-26T22:45:24.974468+00:00 heroku[web.1]: Process exited with status 1
+2021-06-26T22:45:25.043056+00:00 heroku[web.1]: State changed from starting to c
+rashed
+2021-06-26T22:45:30.750416+00:00 app[api]: Set CLOUDINARY_API_SECRET config vars
+ by user venomx2020x@gmail.com
+2021-06-26T22:45:30.750416+00:00 app[api]: Release v8 created by user venomx2020
+x@gmail.com
+2021-06-26T22:45:31.012142+00:00 heroku[web.1]: State changed from crashed to st
+arting
+2021-06-26T22:45:33.938846+00:00 heroku[web.1]: Starting process with command `n
+pm start`
+2021-06-26T22:45:37.305724+00:00 app[web.1]:
+2021-06-26T22:45:37.305741+00:00 app[web.1]: > login-tut@1.0.0 start /app
+2021-06-26T22:45:37.305741+00:00 app[web.1]: > node app.js
+2021-06-26T22:45:37.305741+00:00 app[web.1]:
+2021-06-26T22:45:37.862304+00:00 app[web.1]: internal/modules/cjs/loader.js:984
+2021-06-26T22:45:37.862335+00:00 app[web.1]: throw err;
+2021-06-26T22:45:37.862336+00:00 app[web.1]: ^
+2021-06-26T22:45:37.862336+00:00 app[web.1]:
+2021-06-26T22:45:37.862337+00:00 app[web.1]: Error: Cannot find module './models
+/User'
+2021-06-26T22:45:37.862337+00:00 app[web.1]: Require stack:
+2021-06-26T22:45:37.862338+00:00 app[web.1]: - /app/app.js
+2021-06-26T22:45:37.862339+00:00 app[web.1]: at Function.Module._resolveFilename
+ (internal/modules/cjs/loader.js:981:15)
+2021-06-26T22:45:37.862340+00:00 app[web.1]: at Function.Module._load (internal/
+modules/cjs/loader.js:863:27)
+2021-06-26T22:45:37.862341+00:00 app[web.1]: at Module.require (internal/modules
+/cjs/loader.js:1043:19)
+2021-06-26T22:45:37.862341+00:00 app[web.1]: at require (internal/modules/cjs/he
+lpers.js:77:18)
+2021-06-26T22:45:37.862341+00:00 app[web.1]: at Object.<anonymous> (/app/app.js:
+8:18)
+2021-06-26T22:45:37.862342+00:00 app[web.1]: at Module._compile (internal/module
+s/cjs/loader.js:1157:30)
+2021-06-26T22:45:37.862342+00:00 app[web.1]: at Object.Module._extensions..js (i
+nternal/modules/cjs/loader.js:1177:10)
+2021-06-26T22:45:37.862343+00:00 app[web.1]: at Module.load (internal/modules/cj
+s/loader.js:1001:32)
+2021-06-26T22:45:37.862343+00:00 app[web.1]: at Function.Module._load (internal/
+modules/cjs/loader.js:900:14)
+2021-06-26T22:45:37.862344+00:00 app[web.1]: at Function.executeUserEntryPoint [
+as runMain] (internal/modules/run_main.js:74:12)
+2021-06-26T22:45:37.862344+00:00 app[web.1]: at internal/main/run_main_module.js
+:18:47 {
+2021-06-26T22:45:37.862345+00:00 app[web.1]: code: 'MODULE_NOT_FOUND',
+2021-06-26T22:45:37.862345+00:00 app[web.1]: requireStack: [ '/app/app.js' ]
+2021-06-26T22:45:37.862345+00:00 app[web.1]: }
+2021-06-26T22:45:37.874783+00:00 app[web.1]: npm ERR! code ELIFECYCLE
+2021-06-26T22:45:37.875133+00:00 app[web.1]: npm ERR! errno 1
+2021-06-26T22:45:37.876678+00:00 app[web.1]: npm ERR! login-tut@1.0.0 start: `no
+de app.js`
+2021-06-26T22:45:37.876865+00:00 app[web.1]: npm ERR! Exit status 1
+2021-06-26T22:45:37.877075+00:00 app[web.1]: npm ERR!
+2021-06-26T22:45:37.877236+00:00 app[web.1]: npm ERR! Failed at the login-tut@1.
+0.0 start script.
+2021-06-26T22:45:37.877400+00:00 app[web.1]: npm ERR! This is probably not a pro
+blem with npm. There is likely additional logging output above.
+2021-06-26T22:45:37.887128+00:00 app[web.1]:
+2021-06-26T22:45:37.887382+00:00 app[web.1]: npm ERR! A complete log of this run
+ can be found in:
+2021-06-26T22:45:37.887532+00:00 app[web.1]: npm ERR!     /app/.npm/_logs/2021-0
+6-26T22_45_37_878Z-debug.log
+2021-06-26T22:45:37.964102+00:00 heroku[web.1]: Process exited with status 1
+2021-06-26T22:45:38.037815+00:00 heroku[web.1]: State changed from starting to c
+rashed
+2021-06-26T22:45:55.118960+00:00 heroku[router]: at=error code=H10 desc="App cra
+shed" method=GET path="/" host=bloger-nachat.herokuapp.com request_id=a76d35b2-5
+edc-4e79-a45d-5f1fe3066f75 fwd="105.155.130.56" dyno= connect= service= status=5
+03 bytes= protocol=https
+2021-06-26T22:46:02.124682+00:00 heroku[web.1]: State changed from crashed to st
+arting
+2021-06-26T22:46:04.664904+00:00 heroku[web.1]: Starting process with command `n
+pm start`
+2021-06-26T22:46:07.069050+00:00 app[web.1]:
+2021-06-26T22:46:07.069073+00:00 app[web.1]: > login-tut@1.0.0 start /app
+2021-06-26T22:46:07.069074+00:00 app[web.1]: > node app.js
+2021-06-26T22:46:07.069074+00:00 app[web.1]:
+2021-06-26T22:46:07.725404+00:00 app[web.1]: internal/modules/cjs/loader.js:984
+2021-06-26T22:46:07.725444+00:00 app[web.1]: throw err;
+2021-06-26T22:46:07.725445+00:00 app[web.1]: ^
+2021-06-26T22:46:07.725445+00:00 app[web.1]:
+2021-06-26T22:46:07.725446+00:00 app[web.1]: Error: Cannot find module './models
+/User'
+2021-06-26T22:46:07.725446+00:00 app[web.1]: Require stack:
+2021-06-26T22:46:07.725446+00:00 app[web.1]: - /app/app.js
+2021-06-26T22:46:07.725448+00:00 app[web.1]: at Function.Module._resolveFilename
+ (internal/modules/cjs/loader.js:981:15)
+2021-06-26T22:46:07.725449+00:00 app[web.1]: at Function.Module._load (internal/
+modules/cjs/loader.js:863:27)
+2021-06-26T22:46:07.725450+00:00 app[web.1]: at Module.require (internal/modules
+/cjs/loader.js:1043:19)
+2021-06-26T22:46:07.725450+00:00 app[web.1]: at require (internal/modules/cjs/he
+lpers.js:77:18)
+2021-06-26T22:46:07.725450+00:00 app[web.1]: at Object.<anonymous> (/app/app.js:
+8:18)
+2021-06-26T22:46:07.725451+00:00 app[web.1]: at Module._compile (internal/module
+s/cjs/loader.js:1157:30)
+2021-06-26T22:46:07.725451+00:00 app[web.1]: at Object.Module._extensions..js (i
+nternal/modules/cjs/loader.js:1177:10)
+2021-06-26T22:46:07.725451+00:00 app[web.1]: at Module.load (internal/modules/cj
+s/loader.js:1001:32)
+2021-06-26T22:46:07.725452+00:00 app[web.1]: at Function.Module._load (internal/
+modules/cjs/loader.js:900:14)
+2021-06-26T22:46:07.725452+00:00 app[web.1]: at Function.executeUserEntryPoint [
+as runMain] (internal/modules/run_main.js:74:12)
+2021-06-26T22:46:07.725453+00:00 app[web.1]: at internal/main/run_main_module.js
+:18:47 {
+2021-06-26T22:46:07.725453+00:00 app[web.1]: code: 'MODULE_NOT_FOUND',
+2021-06-26T22:46:07.725454+00:00 app[web.1]: requireStack: [ '/app/app.js' ]
+2021-06-26T22:46:07.725454+00:00 app[web.1]: }
+2021-06-26T22:46:07.734068+00:00 app[web.1]: npm ERR! code ELIFECYCLE
+2021-06-26T22:46:07.734301+00:00 app[web.1]: npm ERR! errno 1
+2021-06-26T22:46:07.735466+00:00 app[web.1]: npm ERR! login-tut@1.0.0 start: `no
+de app.js`
+2021-06-26T22:46:07.735680+00:00 app[web.1]: npm ERR! Exit status 1
+2021-06-26T22:46:07.735988+00:00 app[web.1]: npm ERR!
+2021-06-26T22:46:07.736179+00:00 app[web.1]: npm ERR! Failed at the login-tut@1.
+0.0 start script.
+2021-06-26T22:46:07.736410+00:00 app[web.1]: npm ERR! This is probably not a pro
+blem with npm. There is likely additional logging output above.
+2021-06-26T22:46:07.746199+00:00 app[web.1]:
+2021-06-26T22:46:07.746359+00:00 app[web.1]: npm ERR! A complete log of this run
+ can be found in:
+2021-06-26T22:46:07.746511+00:00 app[web.1]: npm ERR!     /app/.npm/_logs/2021-0
+6-26T22_46_07_737Z-debug.log
+2021-06-26T22:46:07.794789+00:00 heroku[web.1]: Process exited with status 1
+2021-06-26T22:46:07.978903+00:00 heroku[web.1]: State changed from starting to c
+rashed
+2021-06-26T22:46:08.953539+00:00 heroku[router]: at=error code=H10 desc="App cra
+shed" method=GET path="/" host=bloger-nachat.herokuapp.com request_id=0ddaccc3-9
+152-4d53-a3f6-478f84833181 fwd="105.155.130.56" dyno= connect= service= status=5
+03 bytes= protocol=https
+
